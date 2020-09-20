@@ -1,4 +1,20 @@
-<form #userForm="ngForm" (ngSubmit)="submit(userForm.value)" novalidate>
+<div class="navbar">
+	<div class="search">
+		<mat-form-field class="example-full-width">
+			<mat-label>Search for Movies, TV Shows</mat-label>
+			<input matInput class="main-search" name="search" (keypress)="submit($event)" 
+			autocomplete="off" placeholder="Ex. Avengers..." ngModel>
+		</mat-form-field>
+	</div>
+	<div class="filter" (click)="filterClick()">
+		<span class="material-icons">
+			tune
+		</span>
+	</div>
+</div>
+
+
+<!-- <form #userForm="ngForm" (ngSubmit)="submit(userForm.value)" novalidate>
 	<div class="search">
 		<div class="query">
 			<mat-form-field class="example-full-width">
@@ -22,11 +38,7 @@
 				</mat-autocomplete>
 			  </mat-form-field>
 		</div>
-		<div class="filter" (click)="filterClick()">
-			<span class="material-icons">
-				tune
-			</span>
-		</div>
+		
 		<div class="submit">
 			<button class="submit-button" color="primary" type="submit">
 				<span class="submit-text">Search</span>
@@ -36,4 +48,5 @@
 			</button>
 		</div>
 	</div>
-</form>
+</form> -->
+

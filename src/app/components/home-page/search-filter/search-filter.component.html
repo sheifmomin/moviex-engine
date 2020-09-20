@@ -1,9 +1,76 @@
+<div class="filter-heading"> Apply Filters:</div><hr>
 <div class="search-filter">
-	<div class="show-type">
-		<mat-radio-group name="showtype" aria-label="Select an option" ngModel>
-			<mat-radio-button class="type-option" value="tvshow">TV Shows</mat-radio-button>
-			<mat-radio-button class="type-option" value="movie">Movies</mat-radio-button>
-			<mat-radio-button class="type-option" value="multi">Both</mat-radio-button>
-		</mat-radio-group>
+	<div class="container">
+		<div class="filter"> Type:</div>
+		<div class="type">
+			<mat-radio-group name="showtype" aria-label="Select an option" ngModel>
+				<mat-radio-button class="type-option" value="tvshow">Shows</mat-radio-button>
+				<div class="sub-type">
+					<div><mat-checkbox>Movies</mat-checkbox></div>
+					<div><mat-checkbox>TV Shows</mat-checkbox></div>
+				</div>
+				<mat-radio-button class="type-option" value="multi">Actors</mat-radio-button>
+			</mat-radio-group>
+		</div>
+	</div>
+	<div class="container">
+		<div class="filter"> Genre:</div>
+		<mat-form-field class="genre-type">
+		<mat-label>Genere</mat-label>
+		<mat-select [formControl]="toppings" multiple>
+			<mat-select-trigger>
+			{{toppings.value ? toppings.value[0] : ''}}
+			<span *ngIf="toppings.value?.length > 1" class="example-additional-selection">
+				(+{{toppings.value.length - 1}} {{toppings.value?.length === 2 ? 'other' : 'others'}})
+			</span>
+			</mat-select-trigger>
+			<mat-option *ngFor="let topping of toppingList" [value]="topping">{{topping}}</mat-option>
+		</mat-select>
+		</mat-form-field>
+	</div>
+	<div class="container">
+		<div class="filter"> Minimum Rating:</div>
+		<mat-slider thumbLabel
+		tickInterval="1"
+		min="1"
+		max="10"></mat-slider>
+	</div>
+	<div class="container">
+		<div class="filter"> Release Year (Range):</div>
+		<div class="date-range">
+			<mat-form-field>
+				<mat-label>Start date</mat-label>
+				<input matInput [matDatepicker]="picker" autocomplete="off">
+				<mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+				<mat-datepicker #picker></mat-datepicker>
+			</mat-form-field>
+			<mat-form-field>
+				<mat-label>End date (optional)</mat-label>
+				<input matInput [matDatepicker]="picker" autocomplete="off">
+				<mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+				<mat-datepicker #picker></mat-datepicker>
+			</mat-form-field>
+		</div>
+	</div>
+	<div class="container">
+		<div class="filter"> Show Language:</div>
+		<mat-form-field class="genre-type">
+		<mat-label> Select Language</mat-label>
+		<mat-select [formControl]="toppings" multiple>
+			<mat-select-trigger>
+			{{toppings.value ? toppings.value[0] : ''}}
+			<span *ngIf="toppings.value?.length > 1" class="example-additional-selection">
+				(+{{toppings.value.length - 1}} {{toppings.value?.length === 2 ? 'other' : 'others'}})
+			</span>
+			</mat-select-trigger>
+			<mat-option *ngFor="let topping of toppingList" [value]="topping">{{topping}}</mat-option>
+		</mat-select>
+		</mat-form-field>
+	</div>
+	<div class="container">
+		<div class="filter adult-content">
+			<div class="adult-title"> Include Adult Content: </div>
+			<div class="adult-toggle"><mat-slide-toggle></mat-slide-toggle></div>
+		</div>
 	</div>
 </div>

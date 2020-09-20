@@ -1,5 +1,4 @@
 import { Component, OnInit, Input, OnChanges } from '@angular/core';
-
 import { SearchQueryService } from '../../../services/search-query.service';
 
 @Component({
@@ -19,16 +18,15 @@ export class SearchResultsComponent implements OnInit, OnChanges {
   ngOnChanges(): void {
     if (this.searchQuery) {
       this.shows = [];
-      let showType = this.searchQuery.showtype.toString();
+      let showType = 'mutiple';
       if (showType === '') { showType = 'mutiple'; }
-      const searchShow = this.searchQuery.search.toString();
+      const searchShow = this.searchQuery;
       this.searchQueryService.getShowsSearchQuery(showType, searchShow).subscribe(value => {
+        console.log('Jawed demo');
+        console.log(value);
         this.shows = Object.keys(value).map(key => value[key])[0].results;
-        console.log(this.shows);
       });
     }
-
   }
-
 }
 

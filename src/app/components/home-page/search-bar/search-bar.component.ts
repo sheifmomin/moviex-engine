@@ -19,8 +19,8 @@ export class SearchBarComponent implements OnInit {
 
   ngOnInit(): void { }
 
-  public submit(searchParams) {
-    this.searchQuery.emit(searchParams);
+  public submit(event) {
+    this.searchQuery.emit(event.target.value);
   }
 
   public selectFromDropDown(searchParams) {
@@ -41,8 +41,9 @@ export class SearchBarComponent implements OnInit {
         const showType = 'mutiple';
         const searchShow = searchQuery;
         this.searchQueryService.getShowsSearchQuery(showType, searchShow).subscribe(value => {
+          console.log('Jawed demo');
+          console.log(value);
           this.shows = Object.keys(value).map(key => value[key])[0].results;
-          console.log(this.shows);
         });
       }
     }

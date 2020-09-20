@@ -1,6 +1,5 @@
-<div class="container">
-	<div class="movie" *ngFor="let list of shows">
-		<mat-card class="example-card">
+<div class="grid-container grid-container-fill">
+	<div class="grid-element" *ngFor="let list of shows">
 			<img mat-card-image *ngIf="list.poster_path" [src]="'http://image.tmdb.org/t/p/w185' + list.poster_path"
 				class="image-card" alt="Photo of a Shiba Inu">
 			<img mat-card-image *ngIf="!list.poster_path && list.backdrop_path"
@@ -9,19 +8,18 @@
 			<img mat-card-image *ngIf="!list.poster_path && !list.backdrop_path"
 				src="https://images-na.ssl-images-amazon.com/images/I/41nOFqNOlOL._SX466_.jpg" class="image-card"
 				alt="Photo of a Shiba Inu">
-			<mat-card-header>
-				<mat-card-title *ngIf="list.original_title">{{list.original_title}}</mat-card-title>
-				<mat-card-title *ngIf="!list.original_title && list.title">{{list.title}}</mat-card-title>
-				<mat-card-title *ngIf="!list.original_title && !list.title && list.name">{{list.name}}
-				</mat-card-title>
-				<mat-card-title *ngIf="!list.original_title && !list.title && !list.name && list.original_name">
-					{{list.original_name}}
-				</mat-card-title>
-				<mat-card-subtitle *ngIf="list.release_date">{{list.release_date}}</mat-card-subtitle>
-				<mat-card-subtitle *ngIf="list.first_air_date">{{list.first_air_date}}</mat-card-subtitle>
-			</mat-card-header>
-			<mat-card-content>
-			</mat-card-content>
-		</mat-card>
+			
 	</div>
 </div>
+
+<!-- <mat-card-header>
+	<mat-card-title *ngIf="list.original_title">{{list.original_title}}</mat-card-title>
+	<mat-card-title *ngIf="!list.original_title && list.title">{{list.title}}</mat-card-title>
+	<mat-card-title *ngIf="!list.original_title && !list.title && list.name">{{list.name}}
+	</mat-card-title>
+	<mat-card-title *ngIf="!list.original_title && !list.title && !list.name && list.original_name">
+		{{list.original_name}}
+	</mat-card-title>
+	<mat-card-subtitle *ngIf="list.release_date">{{list.release_date}}</mat-card-subtitle>
+	<mat-card-subtitle *ngIf="list.first_air_date">{{list.first_air_date}}</mat-card-subtitle>
+</mat-card-header> -->

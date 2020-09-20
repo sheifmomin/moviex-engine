@@ -21,7 +21,5 @@ export class HomePageComponent {
   constructor(private breakpointObserver: BreakpointObserver) { }
 
   public updateSearchQuery(params) {
-    console.log('****');
-    console.log(params);
   }
 }

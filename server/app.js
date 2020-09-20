@@ -8,6 +8,7 @@ const moviesRoutes = require('./api/routes/movies');
 const tvShowsRoutes = require('./api/routes/tvShows');
 const multipleRoutes = require('./api/routes/mutiple');
 const peopleRoutes = require('./api/routes/people');
+const genreRoutes = require('./api/routes/genre');
 
 /** This is use for logging the API calls before it is passed 
  * to the router */
@@ -36,7 +37,8 @@ app.use('/general', generalRoutes);
 app.use('/movies', moviesRoutes);
 app.use('/tvshows', tvShowsRoutes);
 app.use('/mutiple', multipleRoutes);
-app.use('/people', peopleRoutes);
+app.use('/general', generalRoutes);
+app.use('/genre', genreRoutes);
 
 /** ERROR: If the calls reach this line, means error*/
 app.use((req, res, next) => {

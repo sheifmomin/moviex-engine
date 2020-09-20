@@ -1,4 +1,46 @@
-.search-filter {
-	background: lightgray;
-	padding: 1.5rem;
+.container {
+	padding: 0.6rem;
+}
+
+.filter {
+	color: gray;
+}
+
+.type {
+	padding: 1rem;
+	width: 90%;
+}
+
+.sub-type {
+	padding: 1rem;
+}
+
+/** No CSS for this example */
+mat-slider {
+	width: 100%;
+}
+
+.mat-form-field {
+	width: 100%;
+}
+
+.date-range {
+	margin-top: 10px;
+}
+
+.adult-content {
+	display: flex;
+	align-items: center;
+}
+
+.adult-toggle {
+	margin-left: auto;
+}
+
+.filter-heading {
+	padding-left: 10px;
+    padding-top: 15px;
+    padding-bottom: 10px;
+    font-weight: 500;
+    font-size: 20px;
 }

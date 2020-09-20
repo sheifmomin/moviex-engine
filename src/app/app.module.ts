@@ -19,6 +19,12 @@ import { SearchBarComponent } from './components/home-page/search-bar/search-bar
 import { SearchResultsComponent } from './components/home-page/search-results/search-results.component';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { SearchFilterComponent } from './components/home-page/search-filter/search-filter.component';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatSelectModule } from '@angular/material/select';
+import { MatSliderModule } from '@angular/material/slider';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 
 @NgModule({
   declarations: [
@@ -44,7 +50,13 @@ import { SearchFilterComponent } from './components/home-page/search-filter/sear
     ReactiveFormsModule,
     MatCardModule,
     MatRadioModule,
-    MatAutocompleteModule
+    MatAutocompleteModule,
+    MatCheckboxModule,
+    MatSelectModule,
+    MatSliderModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatSlideToggleModule
   ],
   providers: [],
   bootstrap: [AppComponent]

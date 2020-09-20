@@ -4,19 +4,29 @@
 
 .sidenav {
   display: flex;
-  width: 200px;
+  width: 12rem;
 }
 
 .sidenav .mat-toolbar {
   background: inherit;
 }
 
+.search-nav {
+  margin-top: 1rem;
+}
+
 .mat-toolbar.mat-primary {
   position: sticky;
   top: 0;
   z-index: 1;
+  background: #232323;
 }
 
 .search-bar-cp {
   width: 100vw;
+}
+
+.results-container {
+  background: #232323;
+  padding: 2rem;
 }
