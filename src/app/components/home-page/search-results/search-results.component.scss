@@ -1,0 +1,27 @@
+.container {
+	display: flex;
+	flex-wrap: wrap;
+	margin: 10px;
+}
+
+.container > .movie {
+	display: flex;
+	align-items: stretch;
+	width: 400px;
+	height: 620px;
+	// border: 1px dotted red;
+}
+
+.example-card {
+	width: 100%;
+	margin: 10px;
+}
+
+.example-header-image {
+	background-image: url("https://material.angular.io/assets/img/examples/shiba1.jpg");
+	background-size: cover;
+}
+
+.image-card {
+	height: 500px;
+}

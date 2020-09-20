@@ -1,0 +1,7 @@
+{
+	"api_key": "fde04e71b5267df8830e225e72896715",
+	"general_baseUrl": "https://api.themoviedb.org/3/search",
+	"movie_baseUrl": "https://api.themoviedb.org/3/search/movie",
+	"tvShow_baseUrl": "https://api.themoviedb.org/3/search/tv",
+	"muti_baseUrl": "https://api.themoviedb.org/3/search/multi"
+}

@@ -1,0 +1,39 @@
+<form #userForm="ngForm" (ngSubmit)="submit(userForm.value)" novalidate>
+	<div class="search">
+		<div class="query">
+			<mat-form-field class="example-full-width">
+				<input matInput class="main-search" name="search"
+					(keypress)="onKeyPressSearch($event)" [matAutocomplete]="auto" 
+					autocomplete="off" placeholder="Ex. Avengers..." ngModel>
+				<mat-autocomplete #auto="matAutocomplete">
+				  <mat-option *ngFor="let list of shows">
+					<span *ngIf="list.original_title"
+						(click)="submit(list.original_title)">{{list.original_title}}</span>
+					<span *ngIf="!list.original_title && list.title"
+						(click)="submit(list.title)">{{list.title}}</span>
+					<span *ngIf="!list.original_title && !list.title && list.name"
+						(click)="submit(list.name)">{{list.name}}
+					</span>
+					<span *ngIf="!list.original_title && !list.title && !list.name && list.original_name"
+						(click)="submit(list.original_name)">
+						{{list.original_name}}
+					</span>
+				  </mat-option>
+				</mat-autocomplete>
+			  </mat-form-field>
+		</div>
+		<div class="filter" (click)="filterClick()">
+			<span class="material-icons">
+				tune
+			</span>
+		</div>
+		<div class="submit">
+			<button class="submit-button" color="primary" type="submit">
+				<span class="submit-text">Search</span>
+				<span class="submit-icon material-icons">
+				search
+				</span>
+			</button>
+		</div>
+	</div>
+</form>
